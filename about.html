@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | مدرسة العقل العالمي</title>
+    <meta name="description" content="رؤية ومهمة مدرسة العقل العالمي.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span style="font-size: 2rem;">🎓</span> <span data-i18n="site.name">مدرسة العقل العالمي</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a>
+                <a href="about.html" class="nav-link active" data-i18n="nav.about">من نحن</a>
+                <a href="primary1.html" class="nav-link" data-i18n="nav.primary1">المستوى الأول</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">اتصل بنا</a>
+                
+                <div class="lang-switch">
+                    <button type="button" class="lang-btn active" data-lang="ar" data-i18n="nav.lang_ar">العربية</button>
+                    <button type="button" class="lang-btn" data-lang="en" data-i18n="nav.lang_en">English</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 style="text-align: center; font-size: 3rem; margin-bottom: 2rem;" data-i18n="about.title">من نحن</h1>
+                
+                <div class="card" style="text-align: start; align-items: stretch;">
+                    <h2 style="color: var(--accent-orange);" data-i18n="about.vision_title">رؤيتنا</h2>
+                    <p data-i18n="about.vision_desc">نسعى في "مدرسة العقل العالمي" إلى تقديم تعليم حديث يجمع بين الأصالة والمعاصرة، لتنشئة جيل واثق ومبدع.</p>
+
+                    <h2 style="color: var(--accent-green); margin-top: 2rem;" data-i18n="about.mission_title">مهمتنا</h2>
+                    <p data-i18n="about.mission_desc">توفير منصة تعليمية تفاعلية آمنة للأطفال، خالية من الإعلانات، وبدون جمع بيانات شخصية. نركز على التعلم من خلال اللعب والاستكشاف.</p>
+
+                    <h2 style="color: var(--primary-color); margin-top: 2rem;" data-i18n="about.method_title">طريقتنا التعليمية</h2>
+                    <ul style="list-style-type: disc; padding-inline-start: 2rem;">
+                        <li data-i18n="about.method_1"><strong>دروس ملونة وجذابة:</strong> تناسب الأطفال من عمر 6 إلى 8 سنوات.</li>
+                        <li data-i18n="about.method_2"><strong>فيديوهات قصيرة:</strong> تشرح المفاهيم بطريقة مبسطة.</li>
+                        <li data-i18n="about.method_3"><strong>تمارين تفاعلية:</strong> تعزز الفهم من خلال التعلم الذاتي.</li>
+                        <li data-i18n="about.method_4"><strong>نظام مكافآت:</strong> لتشجيع الطفل وزيادة دافعيته للتعلم.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3 data-i18n="site.name">مدرسة العقل العالمي</h3>
+                <p data-i18n="footer.desc">تعليم حديث يجمع بين الأصالة والمعاصرة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

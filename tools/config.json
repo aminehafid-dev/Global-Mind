@@ -1,0 +1,62 @@
+{
+  "subjects": {
+    "math": {
+      "key": "math",
+      "name_ar": "الرياضيات",
+      "name_en": "Maths",
+      "lang": "ar",
+      "dir": "rtl",
+      "assets_prefix": "MATH",
+      "file_pattern": "*.pptx",
+      "exclude_slide_patterns": [
+        "أهداف التعلم",
+        "توجيهات",
+        "دليل الأستاذ",
+        "شبكة التقويم",
+        "الغلاف",
+        "ملاحظات"
+      ],
+      "default_description": "درس في مادة الرياضيات للمستوى الأول ابتدائي."
+    },
+    "arabic": {
+      "key": "arabic",
+      "name_ar": "اللغة العربية",
+      "name_en": "Arabic",
+      "lang": "ar",
+      "dir": "rtl",
+      "assets_prefix": "AR",
+      "file_pattern": "*.pptx",
+      "exclude_slide_patterns": [
+        "أهداف التعلم",
+        "توجيهات الأستاذ",
+        "دليل",
+        "شبكة الملاحظة",
+        "بطاقة تقويم"
+      ],
+      "default_description": "درس في مادة اللغة العربية للمستوى الأول ابتدائي."
+    },
+    "french": {
+      "key": "french",
+      "name_ar": "اللغة الفرنسية",
+      "name_en": "French",
+      "lang": "fr",
+      "dir": "ltr",
+      "assets_prefix": "FR",
+      "file_pattern": "*.pptx",
+      "exclude_slide_patterns": [
+        "objectifs",
+        "guide enseignant",
+        "évaluation",
+        "remarques"
+      ],
+      "default_description": "Leçon de français pour le niveau 1 primaire."
+    }
+  },
+  "settings": {
+    "source_dir": "source",
+    "lessons_json": "data/lessons.json",
+    "assets_dir": "assets",
+    "max_images_per_lesson": 4,
+    "questions_per_lesson": 4
+  }
+}

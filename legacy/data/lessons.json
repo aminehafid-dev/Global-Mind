@@ -1,0 +1,359 @@
+{
+  "arabic": {
+    "title": "اللغة العربية",
+    "lessons": [
+      {
+        "id": "AR_N1_P1_SEM5_S1",
+        "title": "مراجعة الحروف: م - ر - ب",
+        "description": "درس مراجعة لحروف الميم، الراء، والباء. (الاسبوع 5 - الحصة 1)",
+        "video": "",
+        "images": ["AR_N1_P1_SEM5_S1_img1.jpg", "AR_N1_P1_SEM5_S1_img2.png"],
+        "content": "هذا هو حرف الميم (م). هذا هو حرف الراء (ر). هذا هو حرف الباء (ب). أقرأ الكلمات: رابَ، بوم، بَرَمَ، رَبابٍ، رَمى.",
+        "pdfLink": "assets/pdf/arabic/AR_N1_P1_SEM5_S1.pptx",
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "ما هي الكلمة التي تبدأ بحرف الميم (م)؟",
+            "options": ["راب", "ماما", "بوم"],
+            "correct": 1,
+            "explanation": "أحسنت! كلمة 'ماما' تبدأ بحرف الميم."
+          },
+          {
+            "type": "qcm",
+            "question": "كم عدد المقاطع في كلمة 'رابَ'؟",
+            "options": ["مقطع واحد", "مقطعان", "ثلاثة مقاطع"],
+            "correct": 1,
+            "explanation": "رائع! كلمة 'رابَ' تتكون من مقطعين: را - بَ."
+          },
+          {
+            "type": "qcm",
+            "question": "أي من الحروف التالية يشبه الطبق تحته نقطة؟",
+            "options": ["م", "ر", "ب"],
+            "correct": 2,
+            "explanation": "ممتاز! حرف الباء (ب) يشبه الطبق وتحته نقطة."
+          },
+          {
+            "type": "qcm",
+            "question": "ما هو الصوت الذي نسمعه في بداية كلمة 'رَمى'؟",
+            "options": ["مَ", "رَ", "بَ"],
+            "correct": 1,
+            "explanation": "أحسنت! كلمة 'رَمى' تبدأ بالمقطع 'رَ'."
+          }
+        ]
+      },
+      {
+        "id": "AR_N1_P1_SEM5_S2",
+        "title": "مراجعة الحروف: س - ف - ل",
+        "description": "درس مراجعة لحروف السين، الفاء، واللام. (الاسبوع 5 - الحصة 2)",
+        "video": "",
+        "images": ["AR_N1_P1_SEM5_S2_img1.jpg", "AR_N1_P1_SEM5_S2_img2.png"],
+        "content": "هذا هو حرف السين (س). هذا هو حرف الفاء (ف). هذا هو حرف اللام (ل). استمع وتحدث: يودع مراد والديه ويذهب إلى المدرسة.",
+        "pdfLink": "assets/pdf/arabic/AR_N1_P1_SEM5_S2.pptx",
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "إلى أين يذهب مراد؟",
+            "options": ["إلى السوق", "إلى المدرسة", "إلى الملعب"],
+            "correct": 1,
+            "explanation": "بطل! يذهب مراد إلى المدرسة كما ذكر في القصة."
+          },
+          {
+            "type": "qcm",
+            "question": "ماذا يوجد في قاعة الدرس؟",
+            "options": ["أشجار وأزهار", "طاولات وخزانة", "سرير وألعاب"],
+            "correct": 1,
+            "explanation": "رائع! يوجد في قاعة الدرس طاولات وخزانة."
+          },
+          {
+            "type": "qcm",
+            "question": "ما هي الكلمة التي تبدأ بحرف اللام (ل)؟",
+            "options": ["ليمون", "ساعة", "فيل"],
+            "correct": 0,
+            "explanation": "ممتاز! كلمة 'ليمون' تبدأ بحرف اللام."
+          },
+          {
+            "type": "qcm",
+            "question": "من اختبأ في المحفظة؟",
+            "options": ["مراد", "المعلمة", "دودو"],
+            "correct": 2,
+            "explanation": "أحسنت! دودو هو من اختبأ في المحفظة."
+          }
+        ]
+      }
+    ]
+  },
+  "math": {
+    "title": "الرياضيات",
+    "lessons": [
+      {
+        "id": "ma-1",
+        "title": "الأعداد من 1 إلى 5",
+        "description": "هيا نتعلم كيف نعد الأشياء من واحد إلى خمسة.",
+        "video": "",
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "كم عدد أصابع اليد الواحدة؟",
+            "options": ["3", "5", "10"],
+            "correct": 1,
+            "explanation": "بطل! في يدنا الواحدة 5 أصابع."
+          }
+        ]
+      }
+    ]
+  },
+  "french": {
+    "title": "Français / اللغة الفرنسية",
+    "lessons": [
+      {
+        "id": "fr-1",
+        "title": "La famille (العائلة)",
+        "description": "Apprenons les mots de la famille en français ! / نتعلم أفراد العائلة بالفرنسية!",
+        "video": "",
+        "content": "Dans une famille, il y a : Le père 👨 (الأب), La mère 👩 (الأم), Le frère 👦 (الأخ), La sœur 👧 (الأخت), Le grand-père 👴 (الجد) et La grand-mère 👵 (الجدة).",
+        "words": [
+          { "label": "Le père", "emoji": "👨", "translation": "الأب" },
+          { "label": "La mère", "emoji": "👩", "translation": "الأم" },
+          { "label": "Le frère", "emoji": "👦", "translation": "الأخ" },
+          { "label": "La sœur", "emoji": "👧", "translation": "الأخت" },
+          { "label": "Le grand-père", "emoji": "👴", "translation": "الجد" },
+          { "label": "La grand-mère", "emoji": "👵", "translation": "الجدة" }
+        ],
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "Qui est 'le père' ? 👨",
+            "options": ["الأب", "الأم", "العم"],
+            "correct": 0,
+            "explanation": "Bravo ! 'Le père' c'est l'homme qui prend soin de sa famille (الأب)."
+          },
+          {
+            "type": "qcm",
+            "question": "Comment dit-on 'الأم' en français ? 👩",
+            "options": ["La sœur", "La mère", "La fille"],
+            "correct": 1,
+            "explanation": "Très bien ! 'La mère' signifie الأم."
+          },
+          {
+            "type": "qcm",
+            "question": "Qui est 'le frère' ? 👦",
+            "options": ["الجد", "الأخ", "الأب"],
+            "correct": 1,
+            "explanation": "Super ! 'Le frère' signifie الأخ."
+          },
+          {
+            "type": "qcm",
+            "question": "Qui est 'la sœur' ? 👧",
+            "options": ["الأخت", "الخالة", "الجدة"],
+            "correct": 0,
+            "explanation": "Excellent ! 'La sœur' signifie الأخت."
+          }
+        ]
+      },
+      {
+        "id": "fr-2",
+        "title": "L'école et la classe (المدرسة والقسم)",
+        "description": "Les affaires de l'école et de la classe. / أدوات المدرسة والفصل.",
+        "video": "",
+        "content": "À l'école, j'utilise : Le cartable 🎒, Le livre 📖, Le cahier 📓, Le stylo 🖊️, La règle 📏 et La gomme 🧼.",
+        "words": [
+          { "label": "Le cartable", "emoji": "🎒", "translation": "المحفظة" },
+          { "label": "Le livre", "emoji": "📖", "translation": "الكتاب" },
+          { "label": "Le cahier", "emoji": "📓", "translation": "الدفتر" },
+          { "label": "Le stylo", "emoji": "🖊️", "translation": "القلم" },
+          { "label": "La règle", "emoji": "📏", "translation": "المسطرة" },
+          { "label": "La gomme", "emoji": "🧼", "translation": "الممحاة" }
+        ],
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "Avec quoi écrit-on sur le cahier ? 🖊️",
+            "options": ["Le stylo", "La gomme", "La règle"],
+            "correct": 0,
+            "explanation": "Bravo ! On écrit avec le stylo (القلم)."
+          },
+          {
+            "type": "qcm",
+            "question": "Dans quoi range-t-on ses affaires d'école ? 🎒",
+            "options": ["Le cartable", "La règle", "Le crayon"],
+            "correct": 0,
+            "explanation": "Parfait ! Le cartable (المحفظة) sert à ranger les affaires."
+          },
+          {
+            "type": "qcm",
+            "question": "Que signifie 'le livre' ? 📖",
+            "options": ["القلم", "الكتاب", "المسطرة"],
+            "correct": 1,
+            "explanation": "Super ! 'Le livre' signifie الكتاب."
+          },
+          {
+            "type": "qcm",
+            "question": "À quoi sert 'la gomme' ? 🧼",
+            "options": ["À effacer (المسح)", "À découper (القص)", "À mesurer (القياس)"],
+            "correct": 0,
+            "explanation": "Excellent ! La gomme sert à effacer."
+          }
+        ]
+      },
+      {
+        "id": "fr-3",
+        "title": "Les couleurs (الألوان)",
+        "description": "Découvrons les belles couleurs ! / نكتشف الألوان الجميلة!",
+        "video": "",
+        "content": "Le rouge 🔴, Le bleu 🔵, Le jaune 🟡, Le vert 🟢, L'orange 🟠, Le blanc ⚪ et Le noir ⚫.",
+        "words": [
+          { "label": "Le rouge", "emoji": "🔴", "translation": "أحمر" },
+          { "label": "Le bleu", "emoji": "🔵", "translation": "أزرق" },
+          { "label": "Le jaune", "emoji": "🟡", "translation": "أصفر" },
+          { "label": "Le vert", "emoji": "🟢", "translation": "أخضر" },
+          { "label": "L'orange", "emoji": "🟠", "translation": "برتقالي" },
+          { "label": "Le blanc", "emoji": "⚪", "translation": "أبيض" }
+        ],
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "De quelle couleur est le soleil ? ☀️",
+            "options": ["Bleu", "Jaune", "Vert"],
+            "correct": 1,
+            "explanation": "Bravo ! Le soleil est jaune (أصفر)."
+          },
+          {
+            "type": "qcm",
+            "question": "De quelle couleur est la fraise ? 🍓",
+            "options": ["Rouge", "Noir", "Bleu"],
+            "correct": 0,
+            "explanation": "Très bien ! La fraise est rouge (أحمر)."
+          },
+          {
+            "type": "qcm",
+            "question": "De quelle couleur est le ciel ? 🌤️",
+            "options": ["Jaune", "Bleu", "Orange"],
+            "correct": 1,
+            "explanation": "Super ! Le ciel est bleu (أزرق)."
+          },
+          {
+            "type": "qcm",
+            "question": "De quelle couleur sont les feuilles des arbres ? 🍃",
+            "options": ["Vert", "Blanc", "Rouge"],
+            "correct": 0,
+            "explanation": "Parfait ! Les feuilles sont vertes (أخضر)."
+          }
+        ]
+      },
+      {
+        "id": "fr-4",
+        "title": "Les nombres de 1 à 5 (الأعداد من 1 إلى 5)",
+        "description": "Comptons ensemble de 1 à 5 en français ! / نعد معاً من 1 إلى 5 بالفرنسية!",
+        "video": "",
+        "content": "1 : Un  •  2 : Deux  •  3 : Trois  •  4 : Quatre  •  5 : Cinq",
+        "words": [
+          { "label": "Un (1)", "emoji": "1️⃣", "translation": "واحد" },
+          { "label": "Deux (2)", "emoji": "2️⃣", "translation": "اثنان" },
+          { "label": "Trois (3)", "emoji": "3️⃣", "translation": "ثلاثة" },
+          { "label": "Quatre (4)", "emoji": "4️⃣", "translation": "أربعة" },
+          { "label": "Cinq (5)", "emoji": "5️⃣", "translation": "خمسة" }
+        ],
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "Combien de doigts a une main ? ✋",
+            "options": ["Trois (3)", "Cinq (5)", "Deux (2)"],
+            "correct": 1,
+            "explanation": "Bravo ! Une main a cinq doigts (5)."
+          },
+          {
+            "type": "qcm",
+            "question": "Quel nombre vient après 'un' (1) ? 🔢",
+            "options": ["Deux (2)", "Quatre (4)", "Cinq (5)"],
+            "correct": 0,
+            "explanation": "Très bien ! Après un vient deux."
+          },
+          {
+            "type": "qcm",
+            "question": "Combien font 2 + 1 en français ? 🧮",
+            "options": ["Quatre", "Trois", "Cinq"],
+            "correct": 1,
+            "explanation": "Super ! 2 + 1 = 3 (Trois)."
+          },
+          {
+            "type": "qcm",
+            "question": "Comment s'écrit le chiffre 4 en lettres ?",
+            "options": ["Quatre", "Deux", "Trois"],
+            "correct": 0,
+            "explanation": "Parfait ! 4 s'écrit Quatre."
+          }
+        ]
+      },
+      {
+        "id": "fr-5",
+        "title": "Les animaux familiers (الحيوانات الأليفة)",
+        "description": "Les animaux de la maison et de la ferme. / حيوانات البيت والمزرعة.",
+        "video": "",
+        "content": "Le chat 🐱 fait miaou ! Le chien 🐶 fait ouaf ! L'oiseau 🐦 chante ! Le cheval 🐴 galope !",
+        "words": [
+          { "label": "Le chat", "emoji": "🐱", "translation": "القط" },
+          { "label": "Le chien", "emoji": "🐶", "translation": "الكلب" },
+          { "label": "L'oiseau", "emoji": "🐦", "translation": "العصفور" },
+          { "label": "Le cheval", "emoji": "🐴", "translation": "الحصان" }
+        ],
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "Quel animal fait 'miaou' ? 🐾",
+            "options": ["Le chien", "Le chat", "Le cheval"],
+            "correct": 1,
+            "explanation": "Bravo ! C'est le chat (القط) qui fait miaou."
+          },
+          {
+            "type": "qcm",
+            "question": "Quel animal aboie et fait 'ouaf' ? 🐕",
+            "options": ["Le chien", "L'oiseau", "Le chat"],
+            "correct": 0,
+            "explanation": "Très bien ! Le chien (الكلب) aboie."
+          },
+          {
+            "type": "qcm",
+            "question": "Quel animal a des ailes et sait voler ? 🪽",
+            "options": ["Le cheval", "L'oiseau", "Le chat"],
+            "correct": 1,
+            "explanation": "Super ! L'oiseau (الطائر) a des ailes et sait voler."
+          },
+          {
+            "type": "qcm",
+            "question": "Comment appelle-t-on 'الحصان' en français ? 🐎",
+            "options": ["Le cheval", "La vache", "Le mouton"],
+            "correct": 0,
+            "explanation": "Excellent ! 'Le cheval' signifie الحصان."
+          }
+        ]
+      }
+    ]
+  },
+  "science": {
+    "title": "النشاط العلمي",
+    "lessons": [
+      {
+        "id": "sc-1",
+        "title": "الحواس الخمس",
+        "description": "نتعرف على حواسنا الخمس وكيف نستخدمها.",
+        "video": "",
+        "questions": [
+          {
+            "type": "qcm",
+            "question": "بماذا نرى الأشياء؟",
+            "options": ["بالعين", "بالأذن", "بالأنف"],
+            "correct": 0,
+            "explanation": "ممتاز! نحن نرى الأشياء بالعين."
+          },
+          {
+            "type": "qcm",
+            "question": "بماذا نسمع الأصوات؟",
+            "options": ["بالأنف", "بالعين", "بالأذن"],
+            "correct": 2,
+            "explanation": "أحسنت! نحن نسمع الأصوات بالأذن."
+          }
+        ]
+      }
+    ]
+  }
+}

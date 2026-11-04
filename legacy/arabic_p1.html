@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اللغة العربية - المستوى الأول | مدرسة العقل العالمي</title>
+    <meta name="description" content="دروس اللغة العربية للمستوى الأول.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span style="font-size: 2rem;">🎓</span> <span data-i18n="site.name">مدرسة العقل العالمي</span>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a>
+                <a href="about.html" class="nav-link" data-i18n="nav.about">من نحن</a>
+                <a href="primary1.html" class="nav-link active" data-i18n="nav.primary1">المستوى الأول</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">اتصل بنا</a>
+                
+                <div class="lang-switch">
+                    <button type="button" class="lang-btn active" data-lang="ar" data-i18n="nav.lang_ar">العربية</button>
+                    <button type="button" class="lang-btn" data-lang="en" data-i18n="nav.lang_en">English</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="background-color: var(--primary-light); color: white; text-align: center; padding: 3rem 1rem;">
+            <div class="container">
+                <h1 style="color: white; font-size: 3rem;"><span>📚</span> <span data-i18n="subjects.arabic.title">اللغة العربية</span></h1>
+                <p style="font-size: 1.5rem;" data-i18n="subjects.arabic.desc">تعلم الحروف والكلمات</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" id="app-container">
+                <p style="text-align: center;" data-i18n="exercises.loading">جاري تحميل الدروس...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3 data-i18n="site.name">مدرسة العقل العالمي</h3>
+                <p data-i18n="footer.desc">تعليم حديث يجمع بين الأصالة والمعاصرة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/exercises.js"></script>
+    <script>
+        let app;
+        document.addEventListener('DOMContentLoaded', () => {
+            app = new ExerciseEngine('app-container', 'arabic');
+        });
+    </script>
+</body>
+</html>

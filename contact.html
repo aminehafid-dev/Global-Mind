@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | مدرسة العقل العالمي</title>
+    <meta name="description" content="اتصل بفريق مدرسة العقل العالمي.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span style="font-size: 2rem;">🎓</span> <span data-i18n="site.name">مدرسة العقل العالمي</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a>
+                <a href="about.html" class="nav-link" data-i18n="nav.about">من نحن</a>
+                <a href="primary1.html" class="nav-link" data-i18n="nav.primary1">المستوى الأول</a>
+                <a href="contact.html" class="nav-link active" data-i18n="nav.contact">اتصل بنا</a>
+                
+                <div class="lang-switch">
+                    <button type="button" class="lang-btn active" data-lang="ar" data-i18n="nav.lang_ar">العربية</button>
+                    <button type="button" class="lang-btn" data-lang="en" data-i18n="nav.lang_en">English</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container" style="max-width: 600px;">
+                <h1 style="text-align: center;" data-i18n="contact.title">اتصل بنا</h1>
+                <p style="text-align: center; margin-bottom: 2rem;" data-i18n="contact.subtitle">يسعدنا تواصلكم معنا لأي استفسار أو اقتراح.</p>
+
+                <div class="card" style="align-items: stretch; text-align: start;">
+                    <form id="contactForm" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+                        <div style="margin-bottom: 1rem;">
+                            <label for="name" style="display: block; font-weight: bold; margin-bottom: 0.5rem;" data-i18n="contact.name_label">الاسم الكامل:</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--gray-light); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <label for="email" style="display: block; font-weight: bold; margin-bottom: 0.5rem;" data-i18n="contact.email_label">البريد الإلكتروني:</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--gray-light); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem;">
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="message" style="display: block; font-weight: bold; margin-bottom: 0.5rem;" data-i18n="contact.message_label">الرسالة:</label>
+                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--gray-light); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.submit_btn">إرسال الرسالة</button>
+                        <p id="formStatus" style="margin-top: 1rem; font-weight: bold; text-align: center; display: none;"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3 data-i18n="site.name">مدرسة العقل العالمي</h3>
+                <p data-i18n="footer.desc">تعليم حديث يجمع بين الأصالة والمعاصرة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const isAr = window.currentLang === 'ar';
+            status.style.display = "block";
+            status.style.color = "var(--accent-green)";
+            status.innerHTML = isAr ? "شكراً لتواصلك معنا! سنرد عليك قريباً." : "Thank you for reaching out! We will reply soon.";
+            form.reset();
+        });
+    </script>
+</body>
+</html>

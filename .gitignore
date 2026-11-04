@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build artifacts
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Ignored data and raw assets
+source/
+*.pptx
+*.rar
+*.zip
+backup_*/
+scratch/
+__pycache__/
+*.pyc
+
+# OS & Editor
+.DS_Store
+Thumbs.db
