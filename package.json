@@ -8,8 +8,13 @@
     "dev": "concurrently \"npm run dev --workspace=client\" \"npm run dev --workspace=server\"",
     "dev:client": "npm run dev --workspace=client",
     "dev:server": "npm run dev --workspace=server",
+    "dev:php": "concurrently \"npm run dev --workspace=client\" \"npm run server:php\"",
+    "dev:all": "concurrently \"npm run dev --workspace=client\" \"npm run dev --workspace=server\" \"npm run server:php\"",
+    "server:node": "npm run dev --workspace=server",
+    "server:php": "php -S 127.0.0.1:8000 -t php-server/public php-server/public/index.php",
     "build": "npm run build --workspace=client",
     "start": "npm run start --workspace=server",
+    "db:seed": "node database/generate-seed.js",
     "lint": "npm run lint --workspace=client"
   },
   "workspaces": [
@@ -17,9 +22,6 @@
     "server"
   ],
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "pixelmatch": "^8.0.0",
-    "pngjs": "^7.0.0",
-    "puppeteer-core": "^24.43.1"
+    "concurrently": "^9.1.2"
   }
 }

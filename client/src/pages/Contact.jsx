@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Contact() {
   const { t, i18n } = useTranslation();
@@ -32,8 +33,8 @@ export default function Contact() {
         setStatus({
           show: true,
           message: isAr
-            ? 'شكراً لتواصلك معنا! سنرد عليك قريباً.'
-            : 'Thank you for reaching out! We will reply soon.',
+            ? 'شكراً لتواصلك معنا! تم حفظ رسالتك في قاعدة البيانات وسنرد عليك قريباً.'
+            : 'Thank you for reaching out! Your message was recorded in the SQL database.',
           isError: false
         });
         setFormData({ name: '', email: '', message: '', _gotcha: '' });
@@ -55,7 +56,7 @@ export default function Contact() {
         });
       }
     } catch {
-      // Offline / static fallback
+      // Offline / fallback
       setStatus({
         show: true,
         message: isAr
@@ -72,15 +73,27 @@ export default function Contact() {
   return (
     <main>
       <section className="section">
-        <div className="container" style={{ maxWidth: '600px' }}>
-          <h1 style={{ textAlign: 'center' }} data-i18n="contact.title">
-            {t('contact.title')}
-          </h1>
-          <p style={{ textAlign: 'center', marginBottom: '2rem' }} data-i18n="contact.subtitle">
-            {t('contact.subtitle')}
-          </p>
+        <div className="container" style={{ maxWidth: '640px' }}>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ textAlign: 'center' }}
+          >
+            <span style={{ fontSize: '3rem', display: 'inline-block', marginBottom: '0.5rem' }}>📬</span>
+            <h1 data-i18n="contact.title">{t('contact.title')}</h1>
+            <p style={{ marginBottom: '2rem', fontSize: '1.25rem', color: '#555' }} data-i18n="contact.subtitle">
+              {t('contact.subtitle')}
+            </p>
+          </motion.div>
 
-          <div className="card" style={{ alignItems: 'stretch', textAlign: 'start' }}>
+          <motion.div
+            className="card"
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            style={{ alignItems: 'stretch', textAlign: 'start', boxShadow: '0 8px 24px rgba(0,0,0,0.08)' }}
+          >
             <form id="contactForm" onSubmit={handleSubmit}>
               {/* Anti-spam Honeypot field */}
               <input
@@ -94,10 +107,10 @@ export default function Contact() {
                 style={{ display: 'none' }}
               />
 
-              <div style={{ marginBottom: '1rem' }}>
+              <div style={{ marginBottom: '1.2rem' }}>
                 <label
                   htmlFor="name"
-                  style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}
+                  style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary-color)' }}
                   data-i18n="contact.name_label"
                 >
                   {t('contact.name_label')}
@@ -110,21 +123,26 @@ export default function Contact() {
                   maxLength={100}
                   value={formData.name}
                   onChange={handleChange}
+                  placeholder={isAr ? 'الاسم الكامل أو اسم ولي الأمر' : 'Full Name or Parent Name'}
                   style={{
                     width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid var(--gray-light)',
+                    padding: '0.85rem 1rem',
+                    border: '2px solid var(--gray-light)',
                     borderRadius: 'var(--radius-sm)',
                     fontFamily: 'inherit',
-                    fontSize: '1rem'
+                    fontSize: '1.1rem',
+                    transition: 'border-color 0.2s',
+                    outline: 'none'
                   }}
+                  onFocus={(e) => (e.target.style.borderColor = 'var(--primary-color)')}
+                  onBlur={(e) => (e.target.style.borderColor = 'var(--gray-light)')}
                 />
               </div>
 
-              <div style={{ marginBottom: '1rem' }}>
+              <div style={{ marginBottom: '1.2rem' }}>
                 <label
                   htmlFor="email"
-                  style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}
+                  style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary-color)' }}
                   data-i18n="contact.email_label"
                 >
                   {t('contact.email_label')}
@@ -137,21 +155,26 @@ export default function Contact() {
                   maxLength={100}
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="parent@example.com"
                   style={{
                     width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid var(--gray-light)',
+                    padding: '0.85rem 1rem',
+                    border: '2px solid var(--gray-light)',
                     borderRadius: 'var(--radius-sm)',
                     fontFamily: 'inherit',
-                    fontSize: '1rem'
+                    fontSize: '1.1rem',
+                    transition: 'border-color 0.2s',
+                    outline: 'none'
                   }}
+                  onFocus={(e) => (e.target.style.borderColor = 'var(--primary-color)')}
+                  onBlur={(e) => (e.target.style.borderColor = 'var(--gray-light)')}
                 />
               </div>
 
-              <div style={{ marginBottom: '1rem' }}>
+              <div style={{ marginBottom: '1.5rem' }}>
                 <label
                   htmlFor="message"
-                  style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}
+                  style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary-color)' }}
                   data-i18n="contact.message_label"
                 >
                   {t('contact.message_label')}
@@ -164,42 +187,59 @@ export default function Contact() {
                   maxLength={2000}
                   value={formData.message}
                   onChange={handleChange}
+                  placeholder={isAr ? 'اكتب رسالتك أو استفسارك هنا...' : 'Write your message or inquiry here...'}
                   style={{
                     width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid var(--gray-light)',
+                    padding: '0.85rem 1rem',
+                    border: '2px solid var(--gray-light)',
                     borderRadius: 'var(--radius-sm)',
                     fontFamily: 'inherit',
-                    fontSize: '1rem'
+                    fontSize: '1.1rem',
+                    transition: 'border-color 0.2s',
+                    outline: 'none',
+                    resize: 'vertical'
                   }}
+                  onFocus={(e) => (e.target.style.borderColor = 'var(--primary-color)')}
+                  onBlur={(e) => (e.target.style.borderColor = 'var(--gray-light)')}
                 />
               </div>
 
-              <button
+              <motion.button
                 type="submit"
                 className="btn btn-primary"
                 disabled={loading}
-                style={{ width: '100%' }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                style={{ width: '100%', padding: '14px', fontSize: '1.25rem' }}
                 data-i18n="contact.submit_btn"
               >
-                {t('contact.submit_btn')}
-              </button>
+                {loading ? (isAr ? '⏳ جارٍ الإرسال والتسجيل...' : '⏳ Sending & Saving...') : `📨 ${t('contact.submit_btn')}`}
+              </motion.button>
 
-              {status.show && (
-                <p
-                  id="formStatus"
-                  style={{
-                    marginTop: '1rem',
-                    fontWeight: 'bold',
-                    textAlign: 'center',
-                    color: status.isError ? 'var(--accent-orange)' : 'var(--accent-green)'
-                  }}
-                >
-                  {status.message}
-                </p>
-              )}
+              <AnimatePresence>
+                {status.show && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    style={{
+                      marginTop: '1.5rem',
+                      padding: '1rem',
+                      borderRadius: 'var(--radius-md)',
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      fontSize: '1.1rem',
+                      backgroundColor: status.isError ? '#ffebee' : '#e8f5e9',
+                      color: status.isError ? 'var(--accent-orange)' : 'var(--accent-green)',
+                      border: `1px solid ${status.isError ? '#ffcdd2' : '#a5d6a7'}`
+                    }}
+                  >
+                    {status.isError ? '❌ ' : '✅ '} {status.message}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
     </main>

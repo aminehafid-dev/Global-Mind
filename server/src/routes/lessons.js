@@ -2,18 +2,30 @@ import { Router } from 'express';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getAllLessonsHierarchy } from '../db/index.js';
 
 const router = Router();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Find lessons.json from root or relative to module
 const possiblePaths = [
   path.resolve(__dirname, '../../../data/lessons.json'),
   path.resolve(process.cwd(), 'data/lessons.json'),
   path.resolve(process.cwd(), '../data/lessons.json')
 ];
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res, next) => {
+  try {
+    // 1. First try fetching from SQL database
+    const dbData = await getAllLessonsHierarchy();
+    if (dbData && Object.keys(dbData).length > 0) {
+      res.setHeader('Cache-Control', 'public, max-age=300');
+      return res.json(dbData);
+    }
+  } catch (err) {
+    console.warn('[Lessons Route] DB fetch failed, falling back to JSON:', err.message);
+  }
+
+  // 2. Fallback to static JSON file
   const targetPath = possiblePaths.find((p) => fs.existsSync(p));
 
   if (!targetPath) {
@@ -26,7 +38,6 @@ router.get('/', (req, res) => {
   try {
     const content = fs.readFileSync(targetPath, 'utf8');
     const data = JSON.parse(content);
-    // Add cache-control header
     res.setHeader('Cache-Control', 'public, max-age=300');
     res.json(data);
   } catch (err) {

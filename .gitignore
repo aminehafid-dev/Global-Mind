@@ -24,3 +24,8 @@ __pycache__/
 # OS & Editor
 .DS_Store
 Thumbs.db
+
+# SQLite WAL and journal files
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal

@@ -5,6 +5,7 @@ import { corsMiddleware } from './middleware/cors.js';
 import { apiLimiter } from './middleware/rateLimiters.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import apiRouter from './routes/index.js';
+import { initDb } from './db/index.js';
 
 const app = express();
 
@@ -26,16 +27,29 @@ app.use('/api', apiRouter);
 // Central error handler (no stack traces leaked)
 app.use(errorHandler);
 
-const server = app.listen(env.PORT, () => {
-  console.log(`[Express] École Esprit Global backend running on http://localhost:${env.PORT} (${env.NODE_ENV})`);
-});
+// Initialize database and start server
+let server;
+initDb()
+  .then(() => {
+    server = app.listen(env.PORT, () => {
+      console.log(`[Express] École Esprit Global backend running on http://localhost:${env.PORT} (${env.NODE_ENV})`);
+    });
+  })
+  .catch((err) => {
+    console.error('[Express] Database initialization failed:', err);
+    process.exit(1);
+  });
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
   console.log('[Express] SIGTERM received. Shutting down gracefully...');
-  server.close(() => {
+  if (server) {
+    server.close(() => {
+      process.exit(0);
+    });
+  } else {
     process.exit(0);
-  });
+  }
 });
 
 export default app;

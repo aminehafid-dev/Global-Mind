@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  # 1. MySQL 8 Database
+  mysql-db:
+    image: mysql:8.0
+    container_name: ecole-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ecole_esprit_global
+      MYSQL_USER: ecole_user
+      MYSQL_PASSWORD: ecole_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.mysql.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./database/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # 2. Node.js Express API
+  node-api:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: ecole-node-api
+    restart: always
+    environment:
+      PORT: 5000
+      NODE_ENV: production
+      DB_TYPE: mysql
+      DB_HOST: mysql-db
+      DB_PORT: 3306
+      DB_NAME: ecole_esprit_global
+      DB_USER: ecole_user
+      DB_PASSWORD: ecole_password
+      CORS_ORIGIN: "*"
+    ports:
+      - "5000:5000"
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+
+  # 3. PHP 8.2 Apache API
+  php-api:
+    build:
+      context: .
+      dockerfile: php-server/Dockerfile
+    container_name: ecole-php-api
+    restart: always
+    environment:
+      DB_TYPE: mysql
+      DB_HOST: mysql-db
+      DB_PORT: 3306
+      DB_NAME: ecole_esprit_global
+      DB_USER: ecole_user
+      DB_PASSWORD: ecole_password
+      APP_ENV: production
+    ports:
+      - "8000:80"
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+
+  # 4. React Client (Served via Nginx Reverse Proxy)
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    container_name: ecole-client
+    restart: always
+    ports:
+      - "80:80"
+      - "3000:80"
+    depends_on:
+      - node-api
+      - php-api
+
+volumes:
+  mysql_data:
